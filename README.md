@@ -9,6 +9,6 @@ Notes & code for ["The Rust Programming Language"](https://doc.rust-lang.org/sta
 
 ## Table of Contents
 
-- [Chapter 1 - Getting Started](chapters/ch1/NOTES.md)
-- [Chapter 2 - Programming a Guessing Game](chapters/ch2/NOTES.md)
-- [Chapter 3 - Common Programming Concepts](chapters/ch3/NOTES.md)
+- [Chapter 1 - Getting Started](chapters/ch1)
+- [Chapter 2 - Programming a Guessing Game](chapters/ch2)
+- [Chapter 3 - Common Programming Concepts](chapters/ch3)
