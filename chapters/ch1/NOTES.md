@@ -24,13 +24,16 @@ See [here](https://doc.rust-lang.org/stable/book/ch01-01-installation.html)
 
 ### Hello, World!
 
-- See `hello_world/main.rs`.
+See [`hello_world/`](hello_world/)
+
 - Compile - `rustc main.rs`
 - Run as executable - `./main`
 
 ### Hello, Cargo!
 
 **Best way to create any Rust project is to use Cargo.**
+
+See [`hello_cargo/`](hello_cargo/)
 
 - Create Project - `cargo new hello_cargo`
 - Build Project - `cargo build`
