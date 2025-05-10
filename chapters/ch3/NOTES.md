@@ -1,18 +1,18 @@
 # Chapter 3: Common Programming Concepts
 
 **Table of Contents**
-- [3.1 - Variables and Mutability](#variables-and-mutability)
-- [3.2 - Data Types](#data-types)
-- [3.3 - Functions](#functions)
-- [3.4 - Comments](#comments)
-- [3.5 - Control Flow](#control-flow)
+- [3.1 - Variables and Mutability](#31---variables-and-mutability)
+- [3.2 - Data Types](#32---data-types)
+- [3.3 - Functions](#33---functions)
+- [3.4 - Comments](#34---comments)
+- [3.5 - Control Flow](#35---control-flow)
 
-## Variables and Mutability
+## 3.1 - Variables and Mutability
 
-## Data Types
+## 3.2 - Data Types
 
-## Functions
+## 3.3 - Functions
 
-## Comments
+## 3.4 - Comments
 
-## Control Flow
+## 3.5 - Control Flow
