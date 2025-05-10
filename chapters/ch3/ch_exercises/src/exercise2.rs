@@ -14,7 +14,7 @@ fn nth_fibonacci_number(n: u64) -> u64 {
     } else if n == 1 {
         return b;
     } else {
-        for _ in 1..n {
+        for _ in 2..=n {
             c = a + b;
             a = b;
             b = c;
