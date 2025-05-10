@@ -1,5 +1,5 @@
 <div align='center'>
-<img src="https://github.com/devicons/devicon/blob/master/icons/rust/rust-plain.svg"
+<img src="https://github.com/devicons/devicon/blob/master/icons/rust/rust-original.svg"
     title="Rust" alt="Rust" width="200" height="200" />
 </div>
 
