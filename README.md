@@ -14,3 +14,4 @@ Notes & code for ["The Rust Programming Language"](https://doc.rust-lang.org/sta
 - [Chapter 3 - Common Programming Concepts](chapters/ch3)
 - [Chapter 4 - Understanding Ownership](chapters/ch4)
 - [Chapter 5 - Using Structs to Structure Related Data](chapters/ch5)
+- [Chapter 6 - Enums and Pattern Matching](chapters/ch6)
