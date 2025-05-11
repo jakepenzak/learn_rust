@@ -5,7 +5,7 @@
 
 # Learning Rust 🦀
 
-Notes & code for ["The Rust Programming Language"](https://doc.rust-lang.org/stable/book/print.html)
+Notes & code for ["The Rust Programming Language"](https://doc.rust-lang.org/stable/book/)
 
 ## Table of Contents
 
@@ -13,3 +13,4 @@ Notes & code for ["The Rust Programming Language"](https://doc.rust-lang.org/sta
 - [Chapter 2 - Programming a Guessing Game](chapters/ch2)
 - [Chapter 3 - Common Programming Concepts](chapters/ch3)
 - [Chapter 4 - Understanding Ownership](chapters/ch4)
+- [Chapter 5 - Using Structs to Structure Related Data](chapters/ch5)
