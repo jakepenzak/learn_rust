@@ -248,7 +248,7 @@ if let Some(max) = config_max {
 }
 ```
 
-This is useful, but you do use exhaustive checking of `match`. Ultimately, `if let` is syntax sugar for a `match` that runs code when the value matches one pattern and ignores the rest.
+This is useful, but you do lose exhaustive checking of `match`. Ultimately, `if let` is syntax sugar for a `match` that runs code when the value matches one pattern and ignores the rest.
 
 You can include `else` with an `if let` as well:
 
