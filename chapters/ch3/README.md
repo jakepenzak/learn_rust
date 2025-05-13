@@ -110,7 +110,8 @@ Character literals differ from string literals in that they represent a single U
 - `char`
 ### Compound Types
 
-1. Tuple
+1. **Tuple**
+
 A *tuple* is a general way of grouping together a number of values with a variety of types into one compound type. Tuples have a fixed length: once declared, they cannot grow or shrink in size.
 
 `let tup: (i32, f64, u8) = (500, 6.4, 1);`
@@ -130,7 +131,8 @@ let one = x.2;
 
 Empty tuple `()` is called a unit and is default return type for functions that don't return any meaningful value.
 
-2. Array
+2. **Array**
+
 Another way to have a collection of multiple values is with an array. Unlike a tuple, every element of an array must have the same type. Unlike arrays in some other languages, arrays in Rust have a fixed length.
 
 `let a = [1, 2, 3, 4, 5];`

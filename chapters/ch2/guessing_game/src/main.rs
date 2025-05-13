@@ -16,7 +16,7 @@ fn main() {
             .read_line(&mut guess)
             .expect("Failed to read line"); // read_line appends to string & returns Results enumeration for error handling, which has expect method on it
 
-        // trim removes any leading and ending white space, parse converts one time to another (String to u32 type here)
+        // trim removes any leading and ending white space, parse converts one type to another (String to u32 type here)
         let guess: u32 = match guess.trim().parse() {
             Ok(num) => num,
             Err(_) => continue,
