@@ -10,7 +10,7 @@
 
 ## 6.1 - Defining an Enum
 
-*Enums* give a way of saying a value is one of a possible set of values. For example, a `Rectangle` is one of a set of possible shapes that also includes `Circle` and `Triangle`.
+*Enums* give a way of saying a value is one of a possible set of values. For example, a `Rectangle` is one of a set of possible shapes that also includes `Circle` and `Triangle`. See [`ch5/rectangles`](../ch5/rectangles) for a toy example with shapes.
 
 IP Address example:
 

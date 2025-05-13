@@ -202,7 +202,7 @@ But, what if we want to use a variable in a function and again later? Do we have
 
 ## 4.2 - References and Borrowing
 
-A *reference* solves the above issue by having as a pointer to the data on the heap, rather than moving the variable and changing ownership itself. However, a reference is guaranteed to point to a valid value for the life of that reference. The action of creating a reference is called *borrowing*.
+A *reference* solves the above issue by having as a pointer to the data on the heap, rather than moving the variable and changing ownership itself. A reference is guaranteed to point to a valid value for the life of that reference. The action of creating a reference is called *borrowing*.
 
 You can create a reference by prefixing variable with `&` (e.g., `&variable_name`).
 
@@ -262,7 +262,7 @@ fn dangle() -> &String {
 
 ## 4.3 - The Slice Type
 
-*Slices* let you reference a contiguous sequence of elements in a collectio nrather than the whole collection. A slice is a kind of reference, so it does not have ownership.
+*Slices* let you reference a contiguous sequence of elements in a collection rather than the whole collection. A slice is a kind of reference, so it does not have ownership.
 
 ### String Slices
 

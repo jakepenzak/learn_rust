@@ -48,6 +48,12 @@ fn main() {
 
     let square = Rectangle::square(20);
     println!("Square is {square:?}");
+
+    let enum_circle = Shapes::Circle(Circle { radius: 10 });
+    let enum_rectangle = Shapes::Rectangle(rect2);
+
+    match_shapes(&enum_circle);
+    match_shapes(&enum_rectangle);
 }
 
 // Naive
@@ -89,6 +95,25 @@ impl Rectangle {
         Self {
             width: size,
             height: size,
+        }
+    }
+}
+
+// Enum Stuff
+struct Circle {
+    radius: u32,
+}
+
+enum Shapes {
+    Rectangle(Rectangle),
+    Circle(Circle),
+}
+
+fn match_shapes(shape: &Shapes) {
+    match shape {
+        Shapes::Circle(c) => println!("It's a circle! Radius: {}", c.radius),
+        Shapes::Rectangle(r) => {
+            println!("It's a rectangle! Width: {}, Height: {}", r.width, r.height)
         }
     }
 }
