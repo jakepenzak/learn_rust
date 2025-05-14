@@ -49,6 +49,7 @@ fn main() {
     let square = Rectangle::square(20);
     println!("Square is {square:?}");
 
+    // Enums
     let enum_circle = Shapes::Circle(Circle { radius: 10 });
     let enum_rectangle = Shapes::Rectangle(rect2);
 
