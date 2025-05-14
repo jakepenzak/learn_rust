@@ -9,7 +9,7 @@ Rust has a number of features that allow you to manage your code’s organizatio
 
 **Table of Contents**
 - [7.1 - Packages and Crates](#71---packages-and-crates)
-- [7.2 - Defining Modules to Control Scope and Privacy](#42---defining-modules-to-control-scope-and-privacy)
+- [7.2 - Defining Modules to Control Scope and Privacy](#72---defining-modules-to-control-scope-and-privacy)
 - [7.3 - Paths for Referring to an Item in the Module Tree](#73---paths-for-referring-to-an-item-in-the-module-tree)
 - [7.4 - Bringing Paths Into Scope with the `use` Keyword](#74---bringing-paths-into-scope-with-the-use-keyword)
 - [7.5 - Separating Modules into Different Files](#75---separating-modules-into-different-files)
@@ -71,7 +71,7 @@ crate
          └── take_payment
 ```
 
-## 7.3 - Paths for Referencing an Item in the Module Tree
+## 7.3 - Paths for Referring to an Item in the Module Tree
 
 To show Rust where to find an item in a module tree, we use a path in the same way we use a path when navigating a file system. Nothing fancy here.
 
@@ -201,7 +201,7 @@ As in python, avoid if possible, due to ambiguity and namespacing clashes (altho
 use std::collections::*;
 ```
 
-## 7.5 - Seperating Modules into Different Files
+## 7.5 - Separating Modules into Different Files
 
 The examples thus far in restaurant have all modules defined within the same `lib.rs` script. In realistic scenarios, we will want to break these modules out into files.
 

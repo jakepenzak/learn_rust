@@ -3,7 +3,7 @@
 *Enumerations* (or *enums*) allow you to define a type by enumerating its possible *variants*.
 
 **Table of Contents**
-- [6.1 - Defining an Enum](#61---defining-and-instantiating-structs)
+- [6.1 - Defining an Enum](#61---defining-an-enum)
 - [6.2 - The `match` Control Flow Construct](#62---the-match-control-flow-construct)
 - [6.3 - Concise Control Flow with `if let` and `let else`](#63---concise-control-flow-with-if-let-and-let-else)
 
@@ -132,7 +132,7 @@ let sum = x + y;
 
 This second portion fails b/c they are different types. In other words, you have to convert an `Option<T>` to a `T` before you can perform `T` operations with it. This helps ensure that your code is safe and free from null pointer dereferences. It forces you to explicitely state when something can be null and handle that case directly. How do we actually handle these cases explicitely? With `match`!
 
-## 6.2 - The `match` Control Flow Constuct
+## 6.2 - The `match` Control Flow Construct
 
 The `match` control flow construct is a powerful tool for pattern matching in Rust. It allows you to match a value against a set of patterns and execute code based on the match. Key difference with `if` is that `if` must return a boolean, whereas `match` can return any type.
 
