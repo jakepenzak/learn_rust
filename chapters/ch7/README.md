@@ -100,9 +100,109 @@ In general, we can use `pub` to make structs and enums public, but there are a f
 1. If we use `pub` before a struct definition, we make the struct public, but the struct's fields will still be private. We can make individual fields public by using `pub` before each field in the struct definition.
 1. If we use `pub` before an enum definition, we make the enum public and all its variants will be public as well.
 
-    pub enum Appetizer {
-        Soup,
-        Salad,
-    }
-
 ## 7.4 - Bringing Paths into Scope with the `use` Keyword
+
+It is overly verbose to have to specify full path to use each function (e.g., `let mut meal = back_of_house::Breakfast::summer("Rye");`). Luckily, we can easily get around this using the `use` keyword.
+
+Adding `use` and a path in scope is similar to creating symbolic link.
+
+`use` only brings into scope the shortcut into the scope it is defined.
+
+### Creating Idiomatic `use` Paths
+
+When brining in a function, the idiomatic way is to bring the parent module into scope, rather than function itself. That is,
+
+```rust
+// Both work
+use crate::front_of_house::hosting; // This is idiomatic
+use crate::front_of_house::hosting::add_to_waitlist;
+
+pub fn eat_at_restaurant() {
+    hosting::add_to_waitlist(); // This is idiomatic
+    add_to_waitlist();
+}
+```
+
+On the other hand, when using structs, enums, or other items, it is idiomatic to bring the whole path into scope. The exception is any conflicting names, obviously.
+
+### Providing New NAmes with the `as` Keyword
+
+Similar to python, we can change name of import as:
+
+```rust
+use std::fmt::Result;
+use std::io::Result as IoResult;
+
+fn function1() -> Result {
+    // --snip--
+}
+
+fn function2() -> IoResult<()> {
+    // --snip--
+}
+```
+
+### Re-exporting Names with `pub use`
+
+We can "rexport" a module at point of `use` and enable other callers of that module to access it from module in which `use` is defined.
+
+```rust
+// lib.rs (restuarant lib)
+mod front_of_house {
+    pub mod hosting {
+        pub fn add_to_waitlist() {}
+    }
+}
+
+pub use crate::front_of_house::hosting;
+
+pub fn eat_at_restaurant() {
+    hosting::add_to_waitlist();
+}
+```
+
+Now I'd be able to access `hosting` via `restaurant::hosting` instead of `crate::front_of_house::hosting`.
+
+Similar to using `__init__.py` in python to reorganize imports, we can use `pub use` to re-export names from a module to make them available to external code.
+
+### Using External Packages
+
+Packages are publicly available at [crates.io](https://crates.io/). To use them, you first add to `Cargo.toml` and then import them with `use`:
+
+```toml
+rand = "0.8.5"
+```
+
+```rust
+use rand::Rng;
+
+fn main() {
+    let secret_number = rand::thread_rng().gen_range(1..=100);
+    println!("The secret number is: {}", secret_number);
+}
+```
+
+`std` is standard library that comes with Rust language by default.
+
+### Using Nested Paths to Clean Up Large `use` Lists
+
+When importing multiple items from the same crate or module, we can reduce verbosity of `use` lists using nested paths:
+
+```rust
+use std::{cmp::Ordering, io};
+use std::io::{self, Write};
+```
+
+### The Glob Operator
+
+As in python, avoid if possible, due to ambiguity and namespacing clashes (although Rust protects against the latter?)
+
+```rust
+use std::collections::*;
+```
+
+## 7.5 - Seperating Modules into Different Files
+
+The examples thus far in restaurant have all modules defined within the same `lib.rs` script. In realistic scenarios, we will want to break these modules out into files.
+
+See the `front_of_house` examples and compare to `back_of_house` that is within `lib.rs`.
