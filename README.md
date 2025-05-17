@@ -17,3 +17,4 @@ Notes & code for ["The Rust Programming Language"](https://doc.rust-lang.org/sta
 - [Chapter 6 - Enums and Pattern Matching](chapters/ch6)
 - [Chapter 7 - Managing Growing Projects with Packages, Crates, and Modules](chapters/ch7)
 - [Chapter 8 - Common Collections](chapters/ch8)
+- [Chapter 9 - Error Handling](chapters/ch9)
