@@ -48,7 +48,7 @@ A scope is the range within a program for which an item is valid. Nothing fancy 
 
 ### The `String` Type
 
-Other basic types (coverd in [ch .3](../ch3)) are already of known size (e.g., `i32`) and can thus be stored on stack.
+Other basic types (coverd in [ch .3](../ch03)) are already of known size (e.g., `i32`) and can thus be stored on stack.
 
 string literal is immutable, `String` is mutable and stored on heap.\
 
