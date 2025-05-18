@@ -331,3 +331,103 @@ impl<T: Dsiplay> ToString for T {}
 ```
 
 ## 10.3 - Validating References with Lifetimes
+
+*Lifetimes* are another generic that ensures the references are valid as long as we need them to be.
+
+Every reference in Rust has a lifetime, which is the scope for which that reference is valid. Most of the time, lifetimes are implicit and inferred, just like most of the time, types are inferred. We only have to annotate types when multiple types are possible. In a similar way, we have to annotate lifetimes when the lifetimes of references could be related in a few different ways. Rust requires us to annotate the relationships using generic lifetime parameters to ensure the actual references used at runtime will definitely be valid.
+
+See original chapter to understand how Rust checks lifetimes using *The Borrow Checker*.
+
+### Generic Lifetimes in Functions
+
+The following example doesn't work b/c the compiler doesn't which input reference the return is a reference to!
+
+```rust
+fn main() {
+    let string1 = String::from("abcd");
+    let string2 = "xyz";
+
+    let result = longest(string1.as_str(),string2);
+    println!("The longest string is {}", result);
+}
+
+fn longest(x:&str, y: &str)-> &str {
+    if x.len() > y.len() { x } else { y }
+}
+```
+
+### Lifetime Annotation Syntax
+
+Lifetime annotations don't change how long any of the references they live, but rather describe the relationships of the lifetimes of multiple references to each other without affecting the lifetimes.
+
+```rust
+&i32 // a reference
+&'a // a reference with an explicit lifetime
+&'a mut i32 // a mutable reference with an explicit lifetime
+```
+
+### Lifetime Annotations in Function Signatures
+
+We want the expression to express the following constraint: the return reference will be valid as long as both the parameters are valid.
+
+```rust
+fn longest<'a>(x:&'a str, y: &'a str) -> &'a str {
+    if x.len() > y.len() { x } else { y }
+}
+```
+
+The function signature now tells Rust that for some lifetime `'a`, the function takes two parameters, both of which are string slices that live at least as long as lifetime `'a`. The function signature also tells Rust that the string slice returned from the function will live at least as long as lifetime `'a`. In practice, it means that the lifetime of the reference returned by the longest function is the same as the smaller of the lifetimes of the values referred to by the function arguments. These relationships are what we want Rust to use when analyzing this code.
+
+The return lifetime must have a corresponding lifetime parameter in the function signature.
+
+### Lifetime Annotations in Struct Definitions
+
+```rust
+struct ImportantExcerpt<'a> {
+    part: &'a str,
+}
+
+fn main() {
+    let novel = String::from("Call me Ishmael. Some years ago...");
+    let first_sentence = novel.split('.').next().unwrap();
+    let i = ImportantExcerpt{ part: first_sentence, };
+}
+```
+
+### Lifetime Elision
+
+Historically, lifetimes were needed for all references in a function signature. However, Rust has a set of rules called *lifetime elision* that allow it to infer the lifetimes of references in certain cases:
+
+The compiler will go through each rule and try to infer lifetimes of references:
+
+1. Each parameter that is a reference get;s assigned one lifetime parameter.
+2. If there is exactly one input lifetime paremeter, that lifetime is assigned to all output lifetime parameters.
+3. If there are multiple input lifetimte parameters, but one of them is `&self` or `&mut self`, the lifetime of `self` is assigned to all output lifetime parameters.
+
+See chapter for more details on lifetimes in methods.
+
+### The Static Lifetime
+
+In certain cases, you may want the lifetime of a reference to be the entire duration of the program. This is called the `'static` lifetime. The lifetime of all string literals is static.
+
+```rust
+let s: &'static str = "I have a static lifetime";
+```
+
+### Combining All of Ch. 10
+
+```rust
+use std::fmt::Display;
+
+fn longest_with_an_announcement<'a, T>(
+    x: &'a str,
+    y: &'a str,
+    ann: T,
+) -> &'a str
+where
+    T: Display,
+{
+    println!("Announcement! {ann}");
+    if x.len()  > y.len() { x } else { y }
+}
+```
