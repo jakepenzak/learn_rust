@@ -19,3 +19,4 @@ Notes & code for ["The Rust Programming Language"](https://doc.rust-lang.org/sta
 - [Chapter 8 - Common Collections](chapters/ch08)
 - [Chapter 9 - Error Handling](chapters/ch09)
 - [Chapter 10 - Generic Types, Traits, and Lifetimes](chapters/ch10)
+- [Chapter 11 - Writing Automated Tests](chapters/ch11)
