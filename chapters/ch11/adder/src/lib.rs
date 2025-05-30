@@ -15,10 +15,10 @@ mod tests {
     }
 
     // Trivial example of failed test
-    #[test]
-    fn another() {
-        panic!("Make this test fail");
-    }
+    // #[test]
+    // fn another() {
+    //     panic!("Make this test fail");
+    // }
 
     // Example using `Result<T, E>` in Tests
     #[test]
@@ -98,7 +98,7 @@ mod tests3 {
 // Example adding custom failure messages
 
 pub fn greeting(name: &str) -> String {
-    format!("Hello!")
+    format!("Hello, {}", name)
 }
 
 #[cfg(test)]
@@ -141,5 +141,71 @@ mod tests5 {
     #[should_panic(expected = "less than or equal to 100")]
     fn greater_than_100() {
         Guess::new(200);
+    }
+}
+
+// Showing Function Output
+fn prints_and_returns_10(a: i32) -> i32 {
+    println!("I got the value {a}");
+    10
+}
+
+#[cfg(test)]
+mod tests6 {
+    use super::*;
+
+    #[test]
+    fn this_test_will_pass() {
+        let value = prints_and_returns_10(4);
+        assert_eq!(value, 10);
+    }
+
+    // #[test]
+    // fn this_test_will_fail() {
+    //     let value = prints_and_returns_10(8);
+    //     assert_eq!(value, 5);
+    // }
+}
+
+// Running a Subset of Tests by Name
+#[cfg(test)]
+mod tests7 {
+    use super::*;
+
+    #[test]
+    fn add_two_and_two() {
+        let result = add_two(2);
+        assert_eq!(result, 4);
+    }
+
+    #[test]
+    fn add_three_and_two() {
+        let result = add_two(3);
+        assert_eq!(result, 5);
+    }
+
+    #[test]
+    fn one_hundred() {
+        let result = add_two(100);
+        assert_eq!(result, 102);
+    }
+}
+
+// Ignoring Some Tests Unless Specifically Requested
+
+#[cfg(test)]
+mod tests8 {
+    use super::*;
+
+    #[test]
+    fn it_works() {
+        let result = add(2, 2);
+        assert_eq!(result, 4);
+    }
+
+    #[test]
+    #[ignore]
+    fn expensive_test() {
+        // code that takes an hour to run
     }
 }
