@@ -20,3 +20,4 @@ Notes & code for ["The Rust Programming Language"](https://doc.rust-lang.org/sta
 - [Chapter 9 - Error Handling](chapters/ch09)
 - [Chapter 10 - Generic Types, Traits, and Lifetimes](chapters/ch10)
 - [Chapter 11 - Writing Automated Tests](chapters/ch11)
+- [Chapter 12 - An I/O Project: Building a Command Line Program](chapters/ch12)
