@@ -3,6 +3,8 @@
 **Table of Contents**
 - [13.1 - Closures: Anonymous Functions that Can Capture Their Environment](#131-closures-anonymous-functions-that-can-capture-their-environment)
 - [13.2 - Processing a Series of Items with Iterators](#132-processing-a-series-of-items-with-iterators)
+- [13.3 - Improving Our I/O Project](#133-improving-our-io-project)
+- [13.4 - Comparing Performance: Loops vs. Iterators](#134-comparing-performance-loops-vs-iterators)
 
 ## 13.1 - Closures: Anonymous Functions that Can Capture Their Environment
 

@@ -22,3 +22,4 @@ Notes & code for ["The Rust Programming Language"](https://doc.rust-lang.org/sta
 - [Chapter 11 - Writing Automated Tests](chapters/ch11)
 - [Chapter 12 - An I/O Project: Building a Command Line Program](chapters/ch12)
 - [Chapter 13 - Functional Language Features: Iterators and Closures](chapters/ch13)
+- [Chapter 14 - More About Caro and Crates.io](chapters/ch14)
